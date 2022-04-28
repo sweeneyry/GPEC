@@ -48,14 +48,27 @@ def write_GPEC_File(filename, listCoilPaths, Transpose=0):
         numCoils = len(listCoilPaths)
         print('numCoils ', numCoils)
         
+        coilLen = 0 # this is a check to ensure all the coils being written to 
+                    # this file have the same length
+        
         for j in range(0, numCoils):
             
             coilPath = listCoilPaths[j]
             
+
             if Transpose:
                 coilPath = coilPath.T            
 
             numPts = np.shape(coilPath)[0]
+            
+            if j ==0:
+                # this is the first coil
+                coilLen = numPts
+            else:
+                if numPts != coilLen:
+                    print('Coil ', j, ' in this file has a different length than the previous!')
+                    pdb.set_trace()
+                        
         
             if j == 0:
                            
