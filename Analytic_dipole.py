@@ -1,5 +1,7 @@
 import numpy as np
 
+# Hi Zimi
+
 def analytic_dipole(x_obs, y_obs, x_c, y_c, Bo, mu_r, r_weld):
     mu_0 = 4e-7 * np.pi
     x = x_obs - x_c
