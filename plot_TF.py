@@ -10,7 +10,7 @@ Created on Tue May 31 06:43:29 2022
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from SPARC.Errors.read_sparc_coils_v3 import read_sparc_coils
+from read_sparc_coils_v3 import read_sparc_coils
 
 '''
 Read in the files produced by Steve and convert to the GPEC format.
