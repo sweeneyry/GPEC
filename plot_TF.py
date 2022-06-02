@@ -27,8 +27,7 @@ ax.set_xlabel('Y (m)')
 ax.set_xlabel('Z (m)')
 
 # read in the python dictionary produced from Steve's text file
-filename = '/Users/ryansweeney/Google_Drive/Work/Python/SPARC/Errors/TF/aug28/v1ecoils_curmult_single_005_coils.txt'
-fname = 'tfv1es5mm.dat'
+filename = 'v1ecoils_curmult_single_005_coils.txt'
 aa_out = read_sparc_coils(filename)
 
 
