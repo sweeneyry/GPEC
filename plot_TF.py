@@ -11,6 +11,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from read_sparc_coils_v3 import read_sparc_coils
+from pathlib import Path
 
 '''
 Read in the files produced by Steve and convert to the GPEC format.
@@ -27,7 +28,7 @@ ax.set_xlabel('Y (m)')
 ax.set_xlabel('Z (m)')
 
 # read in the python dictionary produced from Steve's text file
-filename = 'v1ecoils_curmult_single_005_coils.txt'
+filename = Path(__file__).parent / 'v1ecoils_curmult_single_005_coils.txt'
 aa_out = read_sparc_coils(filename)
 
 
