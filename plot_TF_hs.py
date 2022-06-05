@@ -52,7 +52,7 @@ zcrds = np.concatenate((zstarts, np.expand_dims(zends[:,:,:,-1], axis=3)), axis=
 # ------------------------------------------------------------------
 
 
-h = 1.5 ##vertical shift 
+b = 1.5 ##horizontal shift 
 
 tfPList = []
 
@@ -66,9 +66,9 @@ for i in range(0,ncoil):
                 z = zcrds[i,j,k,:]
                 
             if i > 8:
-                 x = xcrds[i,j,k,:]
+                 x = xcrds[i,j,k,:] + b
                  y = ycrds[i,j,k,:] 
-                 z = zcrds[i,j,k,:] + h
+                 z = zcrds[i,j,k,:] 
             
             if Plot:
                 ax.plot(x,y,z, 'b')
@@ -76,7 +76,7 @@ for i in range(0,ncoil):
             path = np.array([np.squeeze(x), np.squeeze(y), np.squeeze(z)])
             tfPList.append(path)
 
-fname = 'TFhs' + str(h) + '.dat'
+fname = 'TFhs' + str(b) + '.dat'
 
 write_GPEC_File('C:/Users/Rubie0/OneDrive/MIT 2022/Urop PSFC/Gpec/' 
                 + 'sparc_' + fname, tfPList, Transpose=1)
