@@ -52,7 +52,7 @@ zcrds = np.concatenate((zstarts, np.expand_dims(zends[:,:,:,-1], axis=3)), axis=
 # ------------------------------------------------------------------
 
 
-h = 1.5 ##vertical shift 
+h = 0.005 ##vertical shift 
 
 tfPList = []
 
@@ -76,7 +76,7 @@ for i in range(0,ncoil):
             path = np.array([np.squeeze(x), np.squeeze(y), np.squeeze(z)])
             tfPList.append(path)
 
-fname = 'TFhs' + str(h) + '.dat'
+fname = 'TFvs' + str(int(h*1000)) + 'mm' + '.dat'
 
 write_GPEC_File('C:/Users/Rubie0/OneDrive/MIT 2022/Urop PSFC/Gpec/' 
                 + 'sparc_' + fname, tfPList, Transpose=1)

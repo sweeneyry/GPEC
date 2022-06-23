@@ -83,7 +83,7 @@ for i in range(0,ncoil):
             path = np.array([np.squeeze(x), np.squeeze(y), np.squeeze(z)])
             tfPList.append(path)
 
-fname = 'TFhs_' + str(h) + 'vs_' + str(b) + '.dat'
+fname = 'TFhs_' + str(int(h*1000)) + 'vs_' + str(int(b*1000)) + '.dat'
 
 write_GPEC_File('C:/Users/Rubie0/OneDrive/MIT 2022/Urop PSFC/Gpec/' 
                 + 'sparc_' + fname, tfPList, Transpose=1)
